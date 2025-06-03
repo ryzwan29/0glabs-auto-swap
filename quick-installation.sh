@@ -65,10 +65,7 @@ npm install
 
 # Change Privatekey
 ENV_FILE=".env"
-
-read -p "\033[1;32m\033[1mEnter your PRIVATE_KEY: \033" PRIVATE_KEY
+read -p $'\033[1;32m\033[1mEnter your PRIVATE_KEY: \033[0m' PRIVATE_KEY
 echo
-
 sed -i "s|^PRIVATE_KEY=.*|PRIVATE_KEY=$PRIVATE_KEY|" "$ENV_FILE"
-
-echo "\033[1;32m\033[1mPRIVATE_KEY has been successfully updated in $ENV_FILE.\033"
+echo -e "\033[1;32m\033[1mPRIVATE_KEY has been successfully updated in $ENV_FILE.\033[0m"
